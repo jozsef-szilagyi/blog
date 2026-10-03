@@ -1,0 +1,60 @@
+[
+  {
+    "ContainingType": "BlogApi.Controllers.BloggerController",
+    "Method": "GetAllBlogger",
+    "RelativePath": "blogger/bloggers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BlogApi.Controllers.BloggerController",
+    "Method": "GetBloggerById",
+    "RelativePath": "blogger/byId/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BlogApi.Controllers.BloggerController",
+    "Method": "PostBloggerLogin",
+    "RelativePath": "blogger/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "loginBloggerDto",
+        "Type": "BlogApi.Models.DTOs.LoginBloggerDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BlogApi.Controllers.BloggerController",
+    "Method": "AddNewBlogger",
+    "RelativePath": "blogger/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "registerBloggerDto",
+        "Type": "BlogApi.Models.DTOs.RegisterBloggerDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
