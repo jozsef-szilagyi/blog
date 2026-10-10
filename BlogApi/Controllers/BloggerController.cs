@@ -163,12 +163,51 @@ namespace BlogApi.Controllers
             cmd.Parameters.AddWithValue("@password", updateBloggerDto.Password);
             cmd.Parameters.AddWithValue("@id", id);
 
-            cmd.ExecuteNonQuery();
+            object result = null;
+
+            if (cmd.ExecuteNonQuery()> 0)
+            {
+                result = StatusCode(200, new { message = "Sikeres frissítés", result = updateBloggerDto });   
+            }
+            else
+            {
+                result = NotFound(new { message = "Sikertelen frissítés", result = updateBloggerDto});
+
+            }
 
             connector.Close( );
 
-            return new { message = "Sikeres frissítés", result = updateBloggerDto };
+            return result;
 
+        }
+
+        [HttpDelete("delete")]
+        public object DeleteBlogger([FromQuery] int id)
+        {
+            var connector = new MySqlConnection(ConnectionString);
+
+            connector.Open();
+
+            string sql = @"DELETE FROM blogger WHERE id=@id";
+            var cmd= new MySqlCommand(sql, connector);
+
+            cmd.Parameters.AddWithValue("@id", id);
+
+            object result = null;
+
+            if (cmd.ExecuteNonQuery() > 0)
+            {
+                result = StatusCode(204, new { message = "Sikeres frissítés"});
+            }
+            else
+            {
+                result = NotFound(new { message = "Nincs ilyen tag."});
+
+            }
+
+            connector.Close();
+
+            return result;
         }
 
     }
