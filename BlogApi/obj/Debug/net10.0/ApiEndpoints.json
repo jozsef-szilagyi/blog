@@ -27,6 +27,22 @@
   },
   {
     "ContainingType": "BlogApi.Controllers.BloggerController",
+    "Method": "DeleteBlogger",
+    "RelativePath": "blogger/delete",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BlogApi.Controllers.BloggerController",
     "Method": "PostBloggerLogin",
     "RelativePath": "blogger/login",
     "HttpMethod": "POST",
@@ -52,6 +68,69 @@
       {
         "Name": "registerBloggerDto",
         "Type": "BlogApi.Models.DTOs.RegisterBloggerDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BlogApi.Controllers.BloggerController",
+    "Method": "UpdateBlogger",
+    "RelativePath": "blogger/update/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "updateBloggerDto",
+        "Type": "BlogApi.Models.DTOs.UpdateBloggerDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BlogApi.Controllers.BlogPostController",
+    "Method": "NumberOfPosts",
+    "RelativePath": "blogpost",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BlogApi.Controllers.BlogPostController",
+    "Method": "GetAllBloggerAndPost",
+    "RelativePath": "blogpost/getAllBloggerPost",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BlogApi.Controllers.BlogPostController",
+    "Method": "GetBloggerPostsNumber",
+    "RelativePath": "blogpost/getBloggerPostsNumber/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
