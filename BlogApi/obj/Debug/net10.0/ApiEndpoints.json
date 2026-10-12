@@ -106,6 +106,22 @@
   },
   {
     "ContainingType": "BlogApi.Controllers.BlogPostController",
+    "Method": "AddNewPost",
+    "RelativePath": "blogpost/AddNewPost",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "newPostDto",
+        "Type": "BlogApi.Models.DTOs.NewPostDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BlogApi.Controllers.BlogPostController",
     "Method": "GetAllBloggerAndPost",
     "RelativePath": "blogpost/getAllBloggerPost",
     "HttpMethod": "GET",

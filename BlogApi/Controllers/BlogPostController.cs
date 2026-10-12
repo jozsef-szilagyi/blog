@@ -67,8 +67,8 @@ namespace BlogApi.Controllers
         }
 
         [HttpGet("getBloggerPostsNumber/{id}")]
-        
-            public object GetBloggerPostsNumber([FromRoute] int id)
+
+        public object GetBloggerPostsNumber([FromRoute] int id)
         {
             var connector = new MySqlConnection(ConnectionString);
 
@@ -107,10 +107,32 @@ namespace BlogApi.Controllers
             return result;
 
         }
-    
 
-        
+        [HttpPost("AddNewPost")]
+        public object AddNewPost([FromBody] NewPostDto newPostDto)
+        {
+            var connector = new MySqlConnection(ConnectionString);
+
+            connector.Open();
+
+            string sql = @"INSERT INTO `blogpost`(`id`, `title`, `content`, `postTime`,`updateTime`, `blogId`) VALUES ('@id','@title','@content','@PostTime','@updateTime','@blogId');";
+
+            var cmd = new MySqlCommand(sql, connector);
+
+            cmd.Parameters.AddWithValue("@id", newPostDto.Id);
+            cmd.Parameters.AddWithValue("@title", newPostDto.Title);
+            cmd.Parameters.AddWithValue("@content", newPostDto.Content);
+            cmd.Parameters.AddWithValue("@PostTime", DateTime.Now);
+            cmd.Parameters.AddWithValue("@updateTime", DateTime.Now);
+            cmd.Parameters.AddWithValue("@blogId", newPostDto.BlogId);
+
+            cmd.ExecuteNonQuery();
+
+            connector.Close();
+
+            return new { message = "Sikeres hozzáads", result = newPostDto };
+        }
+
+
     }
-
-    
 }

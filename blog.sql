@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1:3306
--- Létrehozás ideje: 2026. Okt 10. 06:38
+-- Létrehozás ideje: 2026. Okt 12. 14:06
 -- Kiszolgáló verziója: 8.4.7
 -- PHP verzió: 8.3.28
 
@@ -99,7 +99,8 @@ INSERT INTO `blogger` (`id`, `name`, `email`, `age`, `password`, `RegistrationTi
 (52, 'Vass Henrietta', 'vass.henrietta@gmail.com', 37, 'Heni3786', '2023-08-04 20:39:22'),
 (53, 'Baranyi Daniel', 'baranyi.daniel@gmail.com', 30, 'Dani3093', '2023-08-23 08:53:10'),
 (54, 'Csonka Boglarka', 'csonka.boglarka@gmail.com', 51, 'Bogi51', '2023-09-10 17:07:35'),
-(55, 'Doman Ferenc', 'doman.ferenc@citromail.hu', 64, 'Feri64x', '2023-09-28 11:31:58');
+(55, 'Doman Ferenc', 'doman.ferenc@citromail.hu', 64, 'Feri64x', '2023-09-28 11:31:58'),
+(56, 'Kiskacsa Feri', 'kiskutya@gmail.com', 7, 'kalacskepu12', '2026-10-03 12:39:59');
 
 -- --------------------------------------------------------
 
@@ -117,7 +118,7 @@ CREATE TABLE IF NOT EXISTS `blogpost` (
   `blogId` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `blogId` (`blogId`)
-) ENGINE=MyISAM AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb3;
+) ENGINE=MyISAM AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb3;
 
 --
 -- A tábla adatainak kiíratása `blogpost`
@@ -154,7 +155,8 @@ INSERT INTO `blogpost` (`id`, `title`, `content`, `postTime`, `updateTime`, `blo
 (28, 'Hangulatos kávézók listája', 'Összeállítottam a kedvenc helyeimet, ahová le lehet ülni olvasni vagy dolgozni. Mindegyiknél leírom, mitől különleges.', '2023-09-05 15:30:00', NULL, 45),
 (29, 'Nyári úti tervek', 'Idén három rövid kirándulást tervezek a hosszú nyaralás helyett. Megosztom a célpontokat és a költségvetést.', '2023-07-15 08:45:00', NULL, 50),
 (30, 'Első hetem a blogon', 'Nemrég regisztráltam, és most látom, mennyi mindent lehet még megtanulni. Köszönöm az eddigi biztató hozzászólásokat!', '2023-10-05 18:20:00', NULL, 55),
-(31, 'Szilveszteri tervek', 'Idén otthon szilveszterezünk, baráti társasággal. Menüötletek, játékok és egy kis visszatekintés az évre.', '2023-12-24 20:15:00', '2023-12-27 09:00:00', 55);
+(31, 'Szilveszteri tervek', 'Idén otthon szilveszterezünk, baráti társasággal. Menüötletek, játékok és egy kis visszatekintés az évre.', '2023-12-24 20:15:00', '2023-12-27 09:00:00', 55),
+(32, '@title', '@content', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
