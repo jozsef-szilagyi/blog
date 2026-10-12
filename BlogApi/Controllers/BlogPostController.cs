@@ -115,7 +115,7 @@ namespace BlogApi.Controllers
 
             connector.Open();
 
-            string sql = @"INSERT INTO `blogpost`(`id`, `title`, `content`, `postTime`,`updateTime`, `blogId`) VALUES ('@id','@title','@content','@PostTime','@updateTime','@blogId');";
+            string sql = @"INSERT INTO `blogpost`(`id`, `title`, `content`, `postTime`,`updateTime`, `blogId`) VALUES (@id,@title,@content,@PostTime,@updateTime,@blogId);";
 
             var cmd = new MySqlCommand(sql, connector);
 
@@ -133,6 +133,30 @@ namespace BlogApi.Controllers
             return new { message = "Sikeres hozzáads", result = newPostDto };
         }
 
+        [HttpPut("PostUpdate/{id}")]
+        public object PostUpdate([FromRoute] int id, [FromBody] UpdatePostDto updatePostDto)
+        {
+            var connector = new MySqlConnection(ConnectionString);
 
+            connector.Open();
+
+            string sql = @"UPDATE `blogpost` SET `title`=@title,`content`=@content,`updateTime`=@updateTime WHERE `id` =@id;";
+
+            var cmd = new MySqlCommand(sql, connector);
+
+            cmd.Parameters.AddWithValue("@title", updatePostDto.Title);
+            cmd.Parameters.AddWithValue("@content", updatePostDto.Content);
+            cmd.Parameters.AddWithValue("@updateTime", DateTime.Now);
+            cmd.Parameters.AddWithValue("@id", id);
+
+            cmd.ExecuteNonQuery();
+            connector.Close();
+
+            return updatePostDto;
+
+            
+
+
+        }
     }
 }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1:3306
--- Létrehozás ideje: 2026. Okt 12. 14:06
+-- Létrehozás ideje: 2026. Okt 12. 14:43
 -- Kiszolgáló verziója: 8.4.7
 -- PHP verzió: 8.3.28
 
@@ -118,7 +118,7 @@ CREATE TABLE IF NOT EXISTS `blogpost` (
   `blogId` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `blogId` (`blogId`)
-) ENGINE=MyISAM AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb3;
+) ENGINE=MyISAM AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb3;
 
 --
 -- A tábla adatainak kiíratása `blogpost`
@@ -156,7 +156,8 @@ INSERT INTO `blogpost` (`id`, `title`, `content`, `postTime`, `updateTime`, `blo
 (29, 'Nyári úti tervek', 'Idén három rövid kirándulást tervezek a hosszú nyaralás helyett. Megosztom a célpontokat és a költségvetést.', '2023-07-15 08:45:00', NULL, 50),
 (30, 'Első hetem a blogon', 'Nemrég regisztráltam, és most látom, mennyi mindent lehet még megtanulni. Köszönöm az eddigi biztató hozzászólásokat!', '2023-10-05 18:20:00', NULL, 55),
 (31, 'Szilveszteri tervek', 'Idén otthon szilveszterezünk, baráti társasággal. Menüötletek, játékok és egy kis visszatekintés az évre.', '2023-12-24 20:15:00', '2023-12-27 09:00:00', 55),
-(32, '@title', '@content', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0);
+(32, '@title', '@content', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0),
+(33, 'Robotzsaru', 'Kiskalács', '2026-10-12 16:31:25', '2026-10-12 16:41:46', 1);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
