@@ -154,6 +154,22 @@
   },
   {
     "ContainingType": "BlogApi.Controllers.BlogPostController",
+    "Method": "PostDelete",
+    "RelativePath": "blogpost/PostDelete",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BlogApi.Controllers.BlogPostController",
     "Method": "PostUpdate",
     "RelativePath": "blogpost/PostUpdate/{id}",
     "HttpMethod": "PUT",

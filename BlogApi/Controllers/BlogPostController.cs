@@ -154,8 +154,24 @@ namespace BlogApi.Controllers
 
             return updatePostDto;
 
-            
 
+
+
+        }
+        [HttpDelete("PostDelete")]
+        public object PostDelete([FromQuery] int id)
+        {
+            var connector = new MySqlConnection(ConnectionString);
+
+            connector.Open();
+
+            string sql = @"DELETE FROM `blogpost` WHERE `id`=@id";
+            var cmd = new MySqlCommand(sql, connector);
+
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.ExecuteNonQuery();
+
+            return new { message = "Sikeres törlés ha megfelelő id-t adtál meg" };
 
         }
     }
